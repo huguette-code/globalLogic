@@ -113,11 +113,11 @@ Considere los puntos anteriores cómo mínimo, ya que sin éstos el ejercicio no
         6) Ejecutar los endpoint entregados (signup y login).
 
 ### Documentación (folder resources)
-POSTMAN FILE: GlobalLogic.postman_collection.json
-CONFIGURACION: application.properties
-DIAGRAMA DE COMPONENTES: globalLogicDC.png
-DIAGRAMA DE SECUENCIA LOGIN: loginDS.png
-DIAGRAMA DE SECUENCIA SIGNUP: signupDS.png
+        - POSTMAN FILE: GlobalLogic.postman_collection.json
+        - CONFIGURACION: application.properties
+        - DIAGRAMA DE COMPONENTES: globalLogicDC.png
+        - DIAGRAMA DE SECUENCIA LOGIN: loginDS.png
+        - DIAGRAMA DE SECUENCIA SIGNUP: signupDS.png
 
 ### Coverage
   - Class 89%
