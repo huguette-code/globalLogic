@@ -67,23 +67,22 @@ Considere los puntos anteriores cómo mínimo, ya que sin éstos el ejercicio no
     -El contrato de salida debe ser:
 
         {
-          "id": "f5b7be9f-145d-41fa-874a-2e24edcb2dbb",
-          "created": "19-09-2024 16:16:51",
-          "modified": null,
-          "lastLogin": "19-09-2024 16:16:51",
-          "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbWFpbEBtYWlsMjMyMi5jb20iLCJpYXQiOjE3MjY3NzM0MjAsImV4cCI6MTcyNzM3ODIyMH0.lokJWWDdI1BsierRU9tsPfS6URo1ZgTWzk1N2pWjTpObKPmqeId8dIdjo1e8z-lqMugCB-QP-x7mTFf4wp4hpQ",
-          "active": true,
-          "name": "sdadasdasd",
-          "email": "email@mail2322.com",
-          "password": "$2a$05$fNFV8cVZtnIilOGGw5TLh.MK5RhBLYieo7ZaxQbp6bhLkB9fd9Day",
-          "phones": [
-             {
-               "number": "946644558",
-               "city_code": "1",
-               "country_code": "57"
-              }
-            ]
-          }
+	        id: e5c6cf84-8860-4c00-91cd-22d3be28904e,
+	        created: Nov 16, 2021 12:51:43 PM,
+	        lastLogin: Nov 16, 2021 12:51:43 PM,
+	        token:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWxpb0B0ZXN0...,
+	        isActive: true,
+	        name: Julio Gonzalez,
+	        email: julio@testssw.cl,
+	        password: a2asfGfdfdf4,
+	        phones: [
+		        {
+			number: 87650009,
+			citycode: 7,
+			contrycode: 25
+		        }
+	        ]
+        }
 
 
 ### Software utilizado para el desarrollo
