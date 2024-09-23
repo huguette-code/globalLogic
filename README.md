@@ -89,7 +89,7 @@ Considere los puntos anteriores cómo mínimo, ya que sin éstos el ejercicio no
 | Software      | Version           |
 |---------------|-------------------|
 | IntelliJ IDEA | 2024.2.2          |
-| Maven         | 3.9.9             |
+| Gradle        | 7.4             |
 | H2            | 1.4.200           |
 | Java JDK      | openjdk-8u422-b05 |
 | Springboot    | 2.5.14            |
@@ -105,11 +105,9 @@ Considere los puntos anteriores cómo mínimo, ya que sin éstos el ejercicio no
 
     - Desde una terminal.
         1) Clone el repositorio de git desde la url.
-        2) Correr la instruccion maven (mvn clean install)
-        3) Desde una terminal y dentro de la carpeta del proyecto clonada en 1) 
-        4) Ejecutar java -jar "target/globalLogic-1.0-SNAPSHOT.jar"
-        5) Importar la colecction de postman ubicada en la carpeta resources del proyecto 
-        6) Ejecutar los endpoint entregados (signup y login).
+        2) Correr test y bootrun gradle del proyecto
+        3) Importar la colecction de postman ubicada en la carpeta resources del proyecto 
+        4) Ejecutar los endpoint entregados (signup y login).
 
 ### Documentación (folder resources)
         - POSTMAN FILE: GlobalLogic.postman_collection.json
