@@ -33,7 +33,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestPropertySource(locations = "classpath:application-integrationtest.properties")
-public class UserControllerTest {
+class UserControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -53,8 +53,8 @@ public class UserControllerTest {
     void loginUsersTest() throws Exception {
         User userForTest = createUserForTest();
 
-        assertNotEquals(userForTest.toString(), "");
-        assertNotEquals(userForTest.hashCode(), 0);
+        assertNotEquals("", userForTest.toString());
+        assertNotEquals(0, userForTest.hashCode());
 
         assertTrue(userForTest.getPassword().matches(Constant.PATTERN_CREDENTIALS));
 

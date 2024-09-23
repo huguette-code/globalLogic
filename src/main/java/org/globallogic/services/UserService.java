@@ -6,6 +6,7 @@ import org.globallogic.beans.resquest.LoginRequest;
 import org.globallogic.beans.resquest.SignUpRequest;
 import org.globallogic.dao.User;
 import org.globallogic.dao.UserRepository;
+import org.globallogic.exception.UserNotFoundException;
 import org.globallogic.jwt.JWTTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,8 +16,8 @@ import javax.validation.Valid;
 import java.util.Objects;
 
 import static org.globallogic.constant.Constant.USERS_DOES_EXIST_EXCEPTION_MESSAGE;
-import static org.globallogic.utils.Date.dateNow;
 import static org.globallogic.constant.Constant.USER_DOES_NOT_EXIST_EXCEPTION_MESSAGE;
+import static org.globallogic.utils.Date.dateNow;
 
 @Service
 public class UserService {
@@ -43,6 +44,7 @@ public class UserService {
             lr.setId(user.getId());
             lr.setCreated(user.getCreated());
             lr.setLastLogin(user.getLastLogin());
+            lr.setModified(user.getModified());
             lr.setToken(user.getToken());
             lr.setActive(user.isActive());
             lr.setName(user.getName());
@@ -55,14 +57,9 @@ public class UserService {
             lr.setToken(newToken);
             return lr;
         }
-        Objects.requireNonNull(user, USERS_DOES_EXIST_EXCEPTION_MESSAGE);
-        return new LoginResponse();
+        throw new UserNotFoundException(USER_DOES_NOT_EXIST_EXCEPTION_MESSAGE);
     }
 
-    private void updateUserToken(String email) {
-        String newToken = jwtToken.generateToken(email);
-        userRepository.updateUser(email, newToken, dateNow(), dateNow());
-    }
 
     public SignUpResponse signUp(@Valid SignUpRequest signInRQ) {
         User user = userRepository.findByEmail(signInRQ.getEmail());
@@ -86,11 +83,7 @@ public class UserService {
                     userSave.getToken(),
                     userSave.isActive());
         }
-        Objects.requireNonNull(user, USERS_DOES_EXIST_EXCEPTION_MESSAGE);
-        return new SignUpResponse();
+        throw new UserNotFoundException(USERS_DOES_EXIST_EXCEPTION_MESSAGE);
     }
 
-    public boolean existUserByEmail(String email) {
-        return (userRepository.findByEmail(email) != null);
-    }
 }

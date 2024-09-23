@@ -2,6 +2,9 @@ package org.globallogic.constant;
 
 public class Constant {
 
+    private Constant () {
+
+    }
     public static final String USER_DOES_NOT_EXIST_EXCEPTION_MESSAGE = "User doesn't exist.";
     public static final String USERS_DOES_EXIST_EXCEPTION_MESSAGE = "This email are using.";
     public static final String EMAIL_FORMAT_ERROR_MESSAGE = "Enter a valid email address.Example : email@email.com";
@@ -23,6 +26,4 @@ public class Constant {
     public static final String COUNTRYSIDE_EMPTY_ERROR_MESSAGE = "country_code is required.";
 
     public static final String PATTERN_CREDENTIALS = "^([A-Z]{1})([a-z].*)([0-9]{2})";
-
-
 }

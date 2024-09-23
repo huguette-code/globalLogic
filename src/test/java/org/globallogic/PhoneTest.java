@@ -1,9 +1,6 @@
 package org.globallogic;
 
 import org.globallogic.beans.others.Phone;
-import org.globallogic.beans.resquest.LoginRequest;
-import org.globallogic.constant.Constant;
-import org.globallogic.dao.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,20 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class PhoneTest {
+class PhoneTest {
+
     @Test
-    void phonesTest() throws Exception {
+    void phonesTest(){
         List<Phone> phones = getPhonesForTest();
         Phone phone1 = phones.get(0);
         assertNotNull(phone1);
-        assertNotEquals(phone1.hashCode(),0);
+        assertNotEquals( 0, phone1.hashCode());
         assertEquals(phone1, phones.get(1));
-        assertNotEquals(phone1.toString(),"");
+        assertNotEquals("" , phone1.toString());
 
     }
 
