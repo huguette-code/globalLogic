@@ -29,11 +29,7 @@ public class UserController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doSignIn(@Valid @RequestBody final SignUpRequest signInRQ) {
-        if(userService.existUserByEmail(signInRQ.getEmail())){
-            return new ResponseEntity(new ErrorResponse("User with this email already exist",false), HttpStatus.BAD_REQUEST);
-        }
-
-        return ResponseEntity.ok().body(userService.signUp(signInRQ));
+       return ResponseEntity.ok().body(userService.signUp(signInRQ));
     }
 
     @RequestMapping(

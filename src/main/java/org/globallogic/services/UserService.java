@@ -39,9 +39,7 @@ public class UserService {
     public LoginResponse login(@Valid LoginRequest loginRQ) {
         User user = userRepository.findUserByToken(loginRQ.getToken());
         LoginResponse lr = new LoginResponse();
-        if(user == null) {
-            Objects.requireNonNull(null, USER_DOES_NOT_EXIST_EXCEPTION_MESSAGE);
-        }else{
+        if(user != null) {
             lr.setId(user.getId());
             lr.setCreated(user.getCreated());
             lr.setLastLogin(user.getLastLogin());
@@ -55,9 +53,10 @@ public class UserService {
             String newToken = jwtToken.generateToken(user.getEmail());
             userRepository.updateUser(user.getEmail(), newToken, dateNow(), dateNow());
             lr.setToken(newToken);
-
+            return lr;
         }
-        return lr;
+        Objects.requireNonNull(user, USERS_DOES_EXIST_EXCEPTION_MESSAGE);
+        return new LoginResponse();
     }
 
     private void updateUserToken(String email) {

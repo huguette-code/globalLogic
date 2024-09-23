@@ -1,6 +1,6 @@
 package org.globallogic.beans.others;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 import javax.validation.constraints.NotBlank;
@@ -10,7 +10,7 @@ import java.util.Objects;
 
 import static org.globallogic.constant.Constant.*;
 
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class Phone implements Serializable {
 
     private static final long serialVersionUID = -2989644983507113348L;
